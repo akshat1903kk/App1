@@ -8,11 +8,11 @@ class User(Base):
     email = Column(String, unique=True, index=True)
     password = Column(String)
     role = Column(String, default="seller")
-    is_active = Column(Boolean, default=True)
 
 class Item(Base):
     __tablename__ = "items"
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String, index=True)
     description = Column(String, index=True)
-    owner_id = Column(Integer, index=True)
+    status = Column(String, index=True)
+
