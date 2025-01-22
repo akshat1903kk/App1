@@ -32,7 +32,7 @@ async def create_item(item: ItemRequest,
                       db: db_dependency, 
                       current_user: dict = Depends(get_current_user)):  
     # Check user role, only sellers can add items
-    if current_user['user_role'] != "User":
+    if current_user['user_role'] != "seller":
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, 
             detail="You are not authorized to create an item"

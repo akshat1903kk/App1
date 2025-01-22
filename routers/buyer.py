@@ -22,7 +22,7 @@ router.mount("/static", StaticFiles(directory="static"), name="static")
 @router.post('/buy_item/{item_id}')
 
 async def buy_item(item_id: int, db: db_dependency, current_user: dict = Depends(get_current_user)):
-    if current_user['user_role'] != "Admin":
+    if current_user['user_role'] != "buyer":
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, 
             detail="You are not authorized to buy an item"
