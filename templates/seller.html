@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create a New Item</h2>
+    <form id="create-item-form">
+      <input type="text" id="title" placeholder="Item Title" required>
+      <textarea id="description" placeholder="Item Description" required></textarea>
+      <button type="submit">Create Item</button>
+    </form>
+    <p><a href="/dashboard">Back to Dashboard</a></p>
+  </div>
+  <script src="{{ url_for('static', path='seller.js') }}"></script>
+</body>
+</html>
